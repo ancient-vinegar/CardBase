@@ -4,9 +4,9 @@ namespace CBD
 {
     public class EditAbilityForm : INotifyPropertyChanged
     {
-        public Cards.CardAbility Ability { get; set; }
+        public CardAbility Ability { get; set; }
 
-        public Cards.ManaCost ManaCost
+        public ManaCost ManaCost
         {
             get { return Ability.Cost; }
             set
@@ -78,7 +78,7 @@ namespace CBD
         }
 
         public EditAbilityForm() { Ability = new(); }
-        public EditAbilityForm(Cards.CardAbility cardAbility)
+        public EditAbilityForm(CardAbility cardAbility)
         {
             Ability = cardAbility;
         }

@@ -25,6 +25,18 @@ namespace CBD.Forms.Tests
                     if (r.NodeType == XmlNodeType.Element && r.Name == "TagsList")
                         TagEngine.TagInstance.ReadXml(r);
                 }
+                r.Close();
+            }
+
+            if (File.Exists("TypeTags"))
+            {
+                XmlReader r = XmlReader.Create("TypeTags");
+                while (r.Read())
+                {
+                    if (r.NodeType == XmlNodeType.Element && r.Name == "TagsList")
+                        TagEngine.TagInstance.ReadXml(r);
+                }
+                r.Close();
             }
         }
 
@@ -35,6 +47,18 @@ namespace CBD.Forms.Tests
             TagEngine.TagInstance.WriteXml(w);
             w.WriteEndDocument();
             w.Close();
+
+            w = XmlWriter.Create("TypeTags");
+            w.WriteStartDocument();
+            TagEngine.TagInstance.WriteXml(w);
+            w.WriteEndDocument();
+            w.Close();
+        }
+
+        private void btnTestTypeEditor_Click(object sender, EventArgs e)
+        {
+            EditTypes f = new EditTypes();
+            f.ShowDialog();
         }
     }
 }

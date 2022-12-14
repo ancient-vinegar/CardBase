@@ -9,7 +9,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\CBD.Back\CBD.Back.csproj" />
     <ProjectReference Include="..\CBD.Forms\CBD.Forms.csproj" />
+    <ProjectReference Include="..\CBD\CBD.csproj" />
   </ItemGroup>
 
 </Project>
